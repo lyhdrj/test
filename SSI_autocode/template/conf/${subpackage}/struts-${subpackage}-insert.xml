@@ -1,0 +1,14 @@
+<#assign className = table.className>   
+<#assign classNameLower = className?uncap_first> 
+
+		<action name="${classNameLower}Manage*" class="${classNameLower}Manage">
+			<result name="querysuccess">/page/baseinfo/${classNameLower}List.jsp</result>
+			<result name="deletesuccess">/page/baseinfo/${classNameLower}List.jsp</result>
+			<result name="addsuccess">/page/baseinfo/${classNameLower}Add.jsp</result>
+			<result name="queryforupdate">/page/baseinfo/${classNameLower}Modify.jsp</result>
+			<result name="updatesuccess" type="redirectAction">
+				<param name="actionName">${classNameLower}Manage!queryBaseInfo</param>  
+				<param name="pageBean.totalCount">0</param>
+				<param name="pageBean.currentPage">1</param>
+			</result>
+		</action>

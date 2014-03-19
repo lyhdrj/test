@@ -1,0 +1,92 @@
+<#assign className = table.className> 
+<#assign classNameLower = table.classNameFirstLower> 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="${className}">
+	<typeAlias alias="${classNameLower}Bean" type="${basepackage}.${subpackage}.bean.${className}Bean"/>
+		
+	<@generateIbatisResultMap/>
+	
+	<@generateIbatisGetInfo/>
+	<@generateIbatisGetCount/>
+	
+	<@generateIbatisDeleteByKey/>
+	
+	<@generateIbatisUpdate/>
+	<@generateIbatisInsert/>
+	
+	
+	
+	
+	
+	
+<#macro generateIbatisResultMap>
+        <#if table.singleId>
+        <resultMap id="${classNameLower}Result" class="${classNameLower}Bean">
+        <#list table.columns as column>
+        	<result property="${column.columnNameFirstLower}" column="${column.sqlName}"/>
+		</#list>
+		</resultMap>
+		</#if>		
+</#macro>
+	
+	
+<#macro generateIbatisGetInfo>
+	<select id="get${className}"  parameterClass="${classNameLower}Bean" resultMap="${classNameLower}Result">
+	
+			SELECT <#list table.columns as c>${c.columnName}<#if c_has_next>,</#if></#list> FROM ${table.sqlName}
+			<dynamic prepend="where"> 			
+			<#list table.columns as c>
+				<isNotEmpty prepend="and" property="${c.columnNameFirstLower}"> 
+					${c.sqlName} = #${c.columnNameFirstLower}#
+				</isNotEmpty>
+		    </#list>
+			</dynamic>
+
+	</select>
+</#macro>
+	
+<#macro generateIbatisGetCount>
+	<select id="get${className}Count"  parameterClass="${classNameLower}Bean" resultClass="java.lang.Integer">
+
+			SELECT count(*) FROM ${table.sqlName}
+			<dynamic prepend="where"> 			
+			<#list table.columns as c>
+				<isNotEmpty prepend="and" property="${c.columnNameFirstLower}"> 
+					${c.sqlName} = #${c.columnNameFirstLower}#
+				</isNotEmpty>
+		    </#list>
+			</dynamic>
+
+	</select>
+</#macro>
+
+<#macro generateIbatisInsert>
+	<insert id="add${className}" parameterClass="${classNameLower}Bean">
+
+			INSERT INTO ${table.sqlName}(<#list table.columns as c>${c.columnName}<#if c_has_next>,</#if></#list>) 
+			 VALUES(<#list table.columns as c>#${c.columnNameFirstLower}#<#if c_has_next>,</#if>	</#list>)
+
+	</insert>
+</#macro>
+<#macro generateIbatisDeleteByKey>
+	<delete id="delete${className}" parameterClass="java.util.List">
+			DELETE FROM ${table.sqlName}  where ${table.pkColumn}
+			<iterate prepend="in"  open="(" close=")"
+		   conjunction=",">
+		   #idList[]#
+		  </iterate>
+
+	</delete>
+</#macro>
+<#macro generateIbatisUpdate>
+	<update id="update${className}" parameterClass="${classNameLower}Bean">
+
+			UPDATE ${table.sqlName} SET <#list table.columns as c><#if !c.pk>${c.sqlName}=#${c.columnNameFirstLower}#<#if c_has_next>,</#if> </#if></#list> WHERE <#list table.columns as c> <#if c.pk>${c.sqlName}=#${c.columnNameFirstLower}# </#if></#list>
+
+	</update>
+</#macro>
+</sqlMap>
+	
+	

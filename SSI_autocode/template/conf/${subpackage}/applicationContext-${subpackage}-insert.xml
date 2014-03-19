@@ -1,0 +1,11 @@
+<#assign className = table.className>   
+<#assign classNameLower = className?uncap_first> 
+
+	<!-- ${classNameLower} start -->
+	<bean id="${classNameLower}Service" class="${basepackage}.${subpackage}.service.impl.${className}ServiceImpl">
+		<property name="${classNameLower}DAO" ref="${classNameLower}DAO" />
+	</bean>
+	<bean id="${classNameLower}DAO" class="${basepackage}.${subpackage}.dao.impl.${className}DAOImpl" >
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	<!-- ${classNameLower} end -->

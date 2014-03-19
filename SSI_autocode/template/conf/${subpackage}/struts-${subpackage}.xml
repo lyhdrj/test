@@ -1,0 +1,18 @@
+<#assign className = table.className>   
+<#assign classNameLower = table.classNameFirstLower> 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="${subpackage}" namespace="/page/${subpackage}" extends="web-default,json-default">
+		<action name="${classNameLower}Manage*" class="${classNameLower}Manage">
+			<result type="json" name="jsuccess">
+				<param name="root">jsonResult</param>
+			</result>
+			<result name="init">/page/${subpackage}/${classNameLower}List.jsp</result>
+		</action>
+		<!-- webapp-generator-insert-location -->
+	</package>
+</struts>	
+    
