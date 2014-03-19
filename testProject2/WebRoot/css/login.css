@@ -1,0 +1,43 @@
+BODY {
+	BACKGROUND-POSITION-Y: 0px; FONT-SIZE: 12px; BACKGROUND-IMAGE: url(../images/login/bg_login.png); MARGIN: 0px; BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: #a2d5f0
+}
+#mark{
+width: 40px;	
+}
+.input_1 {
+	BORDER-RIGHT: #999999 1px solid;
+	PADDING-RIGHT: 2px;
+	BORDER-TOP: #999999 1px solid;
+	PADDING-LEFT: 2px;
+	LIST-STYLE-POSITION: inside;
+	FONT-SIZE: 12px;
+	PADDING-BOTTOM: 2px;
+	MARGIN-LEFT: 10px;
+	BORDER-LEFT: #999999 1px solid;
+	COLOR: #333333;
+	PADDING-TOP: 2px;
+	BORDER-BOTTOM: #999999 1px solid;
+	FONT-FAMILY: Arial, Helvetica, sans-serIf;
+	LIST-STYLE-TYPE: none;
+	HEIGHT: 18px;
+	BACKGROUND-COLOR: #dadedf
+}
+#login {
+	BACKGROUND-POSITION-Y:0px; BACKGROUND-IMAGE: url(../images/login/bg_login.png); COLOR: white; BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: #a2d5f0
+}
+ #root {
+	BACKGROUND-IMAGE: url(../images/login/login_root.png);
+	background-repeat: no-repeat;
+	position: relative;
+}
+#main {
+	BACKGROUND-IMAGE: url(../images/login/login_main.png);
+}
+
+#login A {
+	COLOR: white; TEXT-DECORATION: none
+}
+.textbox {
+	BORDER: #0197bc 1px solid; 
+	width:180px;
+}

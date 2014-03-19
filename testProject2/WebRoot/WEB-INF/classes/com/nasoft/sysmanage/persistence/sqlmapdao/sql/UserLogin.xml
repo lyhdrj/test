@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="UserLogin">
+
+    <typeAlias alias="companyObject" type="com.nasoft.sysmanage.model.CompanyBean"/>
+    <typeAlias alias="userLoginBean" type="com.nasoft.sysmanage.model.UserLoginBean"/>
+    <typeAlias alias="menuInfo" type="com.nasoft.sysmanage.model.MenuBean"/>
+
+    <resultMap id="companyResult" class="companyObject">
+        <result property="companyCode" column="company_code"/>
+        <result property="companyName" column="company_name"/>
+    </resultMap>
+    
+    <resultMap id="userInfoResult" class="userLoginBean">
+        <result property="userid" column="user_id"/>
+        <result property="company_code" column="company_code"/>
+        <result property="username" column="user_name"/>
+        <result property="realName" column="real_name"/>
+        <result property="orgName" column="org_name"/>
+        <result property="managementCode" column="management_code"/>
+    </resultMap>
+    
+    <resultMap id="menuInfoResult" class="menuInfo">
+        <result property="menuID" column="MENU_ID"/>
+        <result property="menuName" column="MENU_NAME"/>
+        <result property="menuFunc" column="MENU_FUNCTION"/>
+        <result property="parentMenuID" column="PARENT_MENU_ID"/>
+        <result property="status" column="STATUS"/>
+    </resultMap>
+
+    <select id="getAllCompanys" resultMap="companyResult" >
+        SELECT company_code, company_name FROM TM_COMPANY 
+    </select>
+    
+    <select id="getAdminValidate" resultClass="java.lang.Integer" parameterClass="userLoginBean"  >
+       select count(*) from tm_user t where  t.user_name=#username#  and t.password=#password# and t.user_id=0
+    </select>
+    
+    <select id="getUserValidate" resultClass="java.lang.Integer" parameterClass="userLoginBean" >
+        select count(*) from tm_user where user_name=#username# and password=#password# 
+    </select>
+    <select id="validateUser" resultClass="java.lang.Integer" parameterClass="java.lang.String" >
+        select count(*) from tm_user where user_name=#userName# and is_login = 1
+    </select>
+    <select id="getUserCount" resultClass="java.lang.Integer" parameterClass="userLoginBean" >
+        select count(*) from tm_user where user_name=#username# and company_code=#company_code#
+    </select>
+
+	<select id="getSysUserInfo" resultMap="userInfoResult" parameterClass="userLoginBean" >
+        select t.user_id as user_id,t.company_code as company_code,t.user_name as user_name,t.real_name as real_name,'信息中心' as org_name,t.management_code 
+        from tm_user t 
+        where  t.user_name=#username# and t.password=#password# and t.user_id=0
+    </select>
+  
+	<select id="getUserInfo" resultMap="userInfoResult" parameterClass="userLoginBean" >
+        select t.user_id,t.company_code,t.user_name,t.real_name,m.org_name,t.management_code 
+        from tm_user t,tm_position_user h,tm_position s,tm_org m 
+        where t.user_id=h.user_id and h.position_id=s.position_id and m.org_id=s.org_id  
+        and t.user_name=#username#  and t.password=#password# and is_login=1
+    </select>
+    
+    <select id="getMenuInfoOne" resultMap="menuInfoResult">
+        select MENU_ID,MENU_NAME,MENU_FUNCTION,PARENT_MENU_ID,STATUS from TM_MENU order by parent_menu_id ,menu_id
+    </select>
+   
+    <select id="getMenuInfoTwo" resultMap="menuInfoResult" parameterClass="java.lang.Integer">
+        select MENU_ID,MENU_NAME,MENU_FUNCTION,PARENT_MENU_ID,STATUS from TM_MENU 
+        WHERE MENU_ID IN (select MENU_ID from tm_menu_role 
+        where ROLE_ID=(select ROLE_ID from TM_POSITION_ROLE 
+        where POSITION_ID=(select POSITION_ID from TM_POSITION_USER where USER_ID=#userId#))) 
+        order by parent_menu_id asc
+    </select>
+    
+    <select id="getMenuInfoThree" resultMap="menuInfoResult" parameterClass="java.lang.Integer">
+        select MENU_ID,MENU_NAME,MENU_FUNCTION,PARENT_MENU_ID,STATUS from TM_MENU 
+        WHERE  MENU_ID IN (select MENU_ID from tm_menu_role 
+        where ROLE_ID=(select ROLE_ID from TM_POSITION_ROLE 
+        where POSITION_ID=(select POSITION_ID from TM_POSITION_USER where USER_ID=#userId#))) 
+        order by parent_menu_id asc
+    </select>
+    
+    <update id="updateLoginInfo" parameterClass="userLoginBean">
+        update tm_user set LAST_LOGIN_TIME=sysdate,LAST_LOGIN_IP=#loginip# where USER_ID=#userid#
+    </update>
+    
+    <select id="queryUserIdByUserNameAndCompayCode" parameterClass="userLoginBean" resultClass="java.lang.Integer">
+    	select count(t.user_id) from tm_user t where t.user_name=#username# and t.company_code=#company_code#
+    </select>
+    <select id="getDataBaseStatus" resultClass="java.lang.Integer">
+    	select 1 from dual
+    </select>
+</sqlMap>

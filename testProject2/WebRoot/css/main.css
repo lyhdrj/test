@@ -1,0 +1,127 @@
+/**************************************************
+	*基础样式*
+**************************************************/
+body	{
+		font-family: "Arial", "Helvetica", "sans-serif","宋体", ;
+		font-size: 9pt;
+		margin: 10px;
+		background-color:#E9EFDC;
+		
+scrollbar-base-color:#ffffff;
+scrollbar-face-color:#B0CF76;
+scrollbar-track-color:#E9EFDC;
+scrollbar-arrow-color:#ffffff;
+scrollbar-3dlight-color:#E9EFDC;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff;
+scrollbar-darkshadow-color:#E9EFDC;
+	}
+
+p,br,a,font,div,td,input,textarea{
+     font-family: Arial,Helvetica,sans-serif;
+	font-size: 9pt;
+}
+
+.font1 {color: #FDA706; font-weight:bold;}
+/**************************************************
+	*link样式*
+**************************************************/
+A:link {color: #000; text-decoration: none}
+A:visited {color: #333; text-decoration: none}
+A:hover{color: #547E1F; text-decoration: none}
+
+/**************************************************
+	*表格式样*
+**************************************************/
+.table1{
+width:100%;
+margin:15px auto;
+font-size:9pt;
+color:#333333;
+text-align:center;
+border-collapse:collapse;/*细线表格代码*/
+}
+.table1 td{
+border:1px solid #B0CF76;/*细线表格线条颜色*/
+height:22px;
+}
+caption{ background:url(../images/manager/nr_lb_dh-bj2.gif) left no-repeat; height:28px;text-align:left; padding:5px 28px;font-size:12px;padding-t:5px; border-bottom:3px solid #547E1F; color:#000000;}
+tr.t1 td {background-color:#fff;}/* 交替行第一行的背景色 */
+tr.t2 td {background-color:#E5ECD4;}/* 交替行第二行的背景色 */
+tr.t3 td {background-color:#eee;}/* 鼠标经过时的背景色 */
+th,tfoot tr td{font-weight:bold;text-align:center;background:#547E1F;border:1px solid #B0CF76;color:#E9F0B6;}
+th{line-height:26px;height:26px;}
+.tfoot tr td{background:#B0CF76;line-height:26px;height:26px;border-top:3px solid #547E1F;text-align:right;color:#000000; font-weight:normal;padding-right:10px;}
+thead{border:1px solid #B0CF76;}
+thead tr td{text-align:center;}
+
+.td1{ background:#E9F0B6; padding:1px; text-align:left;}
+
+.table2{
+width:100%;
+font-size:9pt;
+color:#333333;
+text-align:center;
+}
+.table2 td{
+border:1px solid #B0CF76;
+padding:2px;
+height:22px;
+}
+
+
+/**************************************************
+	*表单式样*
+**************************************************/
+.btn_1{
+	background-color: transparent;
+	BACKGROUND-IMAGE:  url(../images/manager/nr_btn_1.gif);
+	BORDER-BOTTOM: 0px;
+	BORDER-LEFT: 0px;
+	BORDER-RIGHT: 0px;
+	BORDER-TOP: 0px;
+	FONT-SIZE: 9pt;
+	HEIGHT: 22px;
+	width: 78px;
+	text-align: center;
+	padding-top: 4px;
+	color:#fff;
+
+}
+.btn_２{
+	background-color: transparent;
+	BACKGROUND-IMAGE:  url(../images/manager/nr_btn_3.gif);
+	BORDER-BOTTOM: 0px;
+	BORDER-LEFT: 0px;
+	BORDER-RIGHT: 0px;
+	BORDER-TOP: 0px;
+	FONT-SIZE: 9pt;
+	HEIGHT: 18px;
+	width: 34px;
+	text-align: center;
+	padding-top: 4px;
+	color:#fff;
+
+}
+input{
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 9pt;
+	color: #000000;
+	text-decoration: none;
+	background-color: #ffffff;
+	height:18px;
+	width:80px;
+	border: 1px solid #B0CF76;
+}
+textarea{
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 9pt;
+	color: #000000;
+	text-decoration: none;
+	background-color: #ffffff;
+	border: 1px solid #B0CF76;
+
+}
+.todyaColor {
+	BACKGROUND-COLOR: aqua
+}

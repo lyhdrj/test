@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="login" extends="tiles-default" namespace="/login">
+		<!-- 用户登陆 -->
+		<action name="userlogin*" class="userlogin">
+			<result name="success" type="tiles">homepage</result>
+			<result name="logoutsuccess">/userLogin.jsp</result>
+			<result name="failed">/userLogin.jsp</result>
+			<result name="login">/userLogin.jsp</result>
+		</action>
+    </package>
+    
+    <package name="sysmanage" extends="default" namespace="/page/sysmanage">
+		<!-- 用户管理 -->
+		<action name="userManage*" class="userManage">
+			<result name="querysuccess">/page/sysmanage/userShow.jsp</result>
+			<result name="queryOneSuccess">/page/sysmanage/userShow.jsp</result>
+			<result name="modifyOneSuccess">/page/sysmanage/userModify.jsp</result>
+			<result name="getOrgTreeSuccess">/page/sysmanage/getOrgTree.jsp</result>
+			<result name="modifyUserPosition">/page/sysmanage/userPositionModify.jsp</result>
+			<result name="queryUserPositionSuccess">/page/sysmanage/getPositionTree.jsp</result>
+			<result name="deleteUserOver">/page/sysmanage/userShow.jsp</result>
+			<result name="updateSuccess" type="redirectAction">
+				userManage!getAllUserInfo?userBean.positionID=${userBean.positionID}
+			</result>
+		</action>
+
+		<!-- 修改密码 -->
+		<action name="userResetPwd*" class="userResetPwd">
+			<result name="resetSuccess">userResetPwd.jsp</result>
+		</action>
+		
+		<!-- 角色管理 -->
+		<action name="roleManage*" class="roleManage">
+			<result name="querysuccess">/page/sysmanage/roleModify.jsp</result>
+			<result name="insertsuccess">/page/sysmanage/roleAdd.jsp</result>
+			<result name="queryonesuccess">/page/sysmanage/roleModifyFunc.jsp</result>
+			<result name="modifysuccess" type="redirectAction">/roleManage!modifyRole?flag=${flag}</result>
+			<result name="queryprivilsuc">/page/sysmanage/rolePrivilege.jsp</result>
+		</action>
+
+
+		
+		<!-- 职位管理 -->
+		<action name="positionManage*" class="positionManage">
+			<result name="querysuccess">/page/sysmanage/positionShow.jsp</result>
+			<result name="queryOneSuccess">/page/sysmanage/positionShow.jsp</result>
+			<result name="deleteSuccess" type="redirectAction">positionManage!queryOneInfo</result>
+			<result name="modifyOneSuccess">/page/sysmanage/positionModify.jsp</result>
+		</action>
+		
+
+
+
+		
+		<!-- 部门管理 -->
+		<action name="orgManage*" class="orgManage">
+			<result name="querysuccess">/page/sysmanage/orgShow.jsp</result>
+			<result name="addsuccess">/page/sysmanage/orgShow.jsp</result>
+			<result name="queryOneSuccess">/page/sysmanage/orgShow.jsp</result>
+			<result name="modifyOneSuccess">/page/sysmanage/orgModify.jsp</result>
+			<result name="deleteSuccess" type="redirectAction">
+			<param name="actionName">orgManage!queryOneInfo</param>  
+            <param name="orgBean.orgCode">${orgBean.parentOrgCode}</param>
+			<param name="pageBean.totalCount">0</param>
+			<param name="pageBean.currentPage">1</param>
+			</result>
+		</action>
+
+    	<!-- 菜单管理 -->
+    	<action name="menuManage*" class="menuMaintenance">
+    		<result name="querysuccess">/page/dtree/menuShow.jsp</result>
+    		<result name="queryOneSuccess">/page/dtree/menuShow.jsp</result>
+    		<result name="modifyOneSuccess">/page/dtree/menuModify.jsp</result>
+    	</action>
+    	<!-- 单位管理 -->
+    	<action name="companyManage*" class="companyManage">
+    		<result name="querysuccess">/page/sysmanage/companyShow.jsp</result>
+    		<result name="queryOneSuccess">/page/sysmanage/companyShow.jsp</result>
+    		<result name="modifyOneSuccess">/page/sysmanage/companyModify.jsp</result>
+    		<result name="deletesuccess" type="redirectAction">
+				<param name="actionName">companyManage!queryCompanyInfo</param>  
+	            <param name="companyBean.parentComCode">0</param>
+				<param name="pageBean.totalCount">0</param>
+				<param name="pageBean.currentPage">1</param>
+			</result>
+    	</action>
+    </package>
+    
+    
+</struts>

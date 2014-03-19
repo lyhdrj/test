@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="LogManage">
+
+ 	<typeAlias alias="logBean" type="com.nasoft.log.model.LogBean"/>
+ 	<resultMap id="logBeanResult" class="logBean">
+        <result property="logId" column="log_id"/>
+        <result property="logType" column="log_type"/>
+        <result property="logMessage" column="log_message"/>
+        <result property="logOper" column="log_oper"/>
+        <result property="createDate" column="create_date"/>
+    </resultMap>
+    
+	<insert id="addLogInfo" parameterClass="logBean">
+		insert into tm_log(log_id,log_type,log_message,log_oper,create_date) values(seq_log.nextval,#logType#,#logMessage#,#logOper#,to_char(sysdate,'yyyy/MM/dd HH24:mi:ss'))
+	</insert>
+</sqlMap>

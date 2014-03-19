@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsp="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsp:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+	
+	 <import resource="spring-sysmanage.xml" />
+	 <import resource="spring-baseinfo.xml" />
+	<!-- 定义数据源Bean，使用C3P0数据源实现 -->  
+	    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"  
+	        destroy-method="close">  
+	        <!-- 指定连接数据库的驱动 -->  
+	        <property name="driverClass" value="oracle.jdbc.driver.OracleDriver"/>  
+	        <!-- 指定连接数据库的URL -->  
+	        <property name="jdbcUrl" value="jdbc:oracle:thin:@192.168.0.214:1521:forestdb"/>  
+	        <!-- 指定连接数据库的用户名 -->  
+	        <property name="user" value="woodsys"/>  
+	        <!-- 指定连接数据库的密码 -->  
+	        <property name="password" value="sunrister"/>  
+	        <!-- 指定连接数据库连接池的最大连接数 -->  
+	        <property name="maxPoolSize" value="40"/>  
+	        <!-- 指定连接数据库连接池的最小连接数 -->  
+	        <property name="minPoolSize" value="5"/>  
+	        <!-- 指定连接数据库连接池的初始化连接数 -->  
+	        <property name="initialPoolSize" value="5"/>  
+	        <!-- 指定连接数据库连接池的连接的最大空闲时间 -->  
+	    </bean>
+	<!--bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+	 <property name="jndiName" value="java:comp/env/jdbc/OracleDS"/>
+	</bean-->    
+
+	<bean id="transactionManager"   
+        class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
+        <!-- 配置DataSourceTransactionManager时需要依注入DataSource的引用 -->  
+        <property name="dataSource" ref="dataSource"/>  
+    </bean>
+
+	<!--bean id="txProxyTemplate" abstract="true"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
+		lazy-init="true">
+		<property name="transactionManager" ref="transactionManager">
+
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="insert*">
+					PROPAGATION_REQUIRED,-Exception
+				</prop>
+				<prop key="save*">PROPAGATION_REQUIRED,-Exception</prop>
+				<prop key="update*">
+					PROPAGATION_REQUIRED,-Exception
+				</prop>
+				<prop key="modify">
+					PROPAGATION_REQUIRED,-Exception
+				</prop>
+				<prop key="delete*">
+					PROPAGATION_REQUIRED,-Exception
+				</prop>
+				<prop key="remove*">
+					PROPAGATION_REQUIRED,-Exception
+				</prop>
+				<prop key="select*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="query*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean-->
+
+
+
+	<!--配置数据源A start -->
+
+
+	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation">
+			<value>/WEB-INF/sql-map-config.xml</value>
+		</property>
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+	</bean>
+	<!--配置数据源A end -->
+
+
+
+	<bean name ="reports" class="com.nasoft.util.Reports">
+	</bean>
+	<bean name ="reportService" class="com.nasoft.util.ReportService">
+		<property name="report" ref="reports" />
+	</bean>
+	
+	<bean name="logManageService" class="com.nasoft.log.service.impl.LogManageServiceImpl">
+		<property name="logManageDao" ref="logManageDao" />
+	</bean>
+	<bean name="logManageDao" class = "com.nasoft.log.persistence.sqlmapdao.LogManageDaoImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+	  <tx:attributes>
+	    <tx:method name="insert*" propagation="REQUIRED"  rollback-for="RuntimeException"/>
+	    <tx:method name="save*" propagation="REQUIRED"  rollback-for="RuntimeException"/>
+	    <tx:method name="update*" propagation="REQUIRED"  rollback-for="RuntimeException"/>
+	    <tx:method name="modify" propagation="REQUIRED"  rollback-for="RuntimeException"/>
+	    <tx:method name="delete*" propagation="REQUIRED"  rollback-for="RuntimeException" />
+	    <tx:method name="remove*" propagation="REQUIRED"  rollback-for="RuntimeException" />
+	    <tx:method name="*" propagation="REQUIRED"   read-only="true"/>
+	  </tx:attributes>
+	</tx:advice>
+	
+	<aop:config proxy-target-class="true">
+	    <aop:advisor pointcut="execution(* com.nasoft.*.service.*.*(..))" advice-ref="txAdvice"/> 
+	</aop:config>
+
+
+	<!-- bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator"/-->
+	<!-- 配置Aop自动注入-->
+	<aop:aspectj-autoproxy/>
+	<!-- 指定那些包以及子包下的类允许使用注解来配置bean-->
+	<context:component-scan base-package="com.nasoft.baseinfo.struts" />
+</beans>

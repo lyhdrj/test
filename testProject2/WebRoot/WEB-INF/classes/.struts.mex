@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="default" location="0,0" size="0,0" />
+  <package name="login" location="0,0" size="0,0">
+    <action name="userlogin*" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="logoutsuccess">
+        <resourceEdge source="logoutsuccess" routing="0" target="userLogin.jsp" />
+      </result>
+      <result name="failed">
+        <resourceEdge source="failed" routing="0" target="userLogin.jsp" />
+      </result>
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="userLogin.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="sysmanage" location="0,0" size="0,0">
+    <action name="userManage*" location="0,0" size="0,0">
+      <result name="querysuccess">
+        <resourceEdge source="querysuccess" routing="0" target="userShow.jsp" />
+      </result>
+      <result name="queryOneSuccess">
+        <resourceEdge source="queryOneSuccess" routing="0" target="userShow.jsp" />
+      </result>
+      <result name="modifyOneSuccess">
+        <resourceEdge source="modifyOneSuccess" routing="0" target="userModify.jsp" />
+      </result>
+      <result name="getOrgTreeSuccess">
+        <resourceEdge source="getOrgTreeSuccess" routing="0" target="getOrgTree.jsp" />
+      </result>
+      <result name="modifyUserPosition">
+        <resourceEdge source="modifyUserPosition" routing="0" target="userPositionModify.jsp" />
+      </result>
+      <result name="queryUserPositionSuccess">
+        <resourceEdge source="queryUserPositionSuccess" routing="0" target="getPositionTree.jsp" />
+      </result>
+      <result name="deleteUserOver">
+        <resourceEdge source="deleteUserOver" routing="0" target="userShow.jsp" />
+      </result>
+      <result name="updateSuccess" />
+    </action>
+    <action name="userResetPwd*" location="0,0" size="0,0">
+      <result name="resetSuccess">
+        <resourceEdge source="resetSuccess" routing="0" target="userResetPwd.jsp" />
+      </result>
+    </action>
+    <action name="roleManage*" location="0,0" size="0,0">
+      <result name="querysuccess">
+        <resourceEdge source="querysuccess" routing="0" target="roleModify.jsp" />
+      </result>
+      <result name="insertsuccess">
+        <resourceEdge source="insertsuccess" routing="0" target="roleAdd.jsp" />
+      </result>
+      <result name="queryonesuccess">
+        <resourceEdge source="queryonesuccess" routing="0" target="roleModifyFunc.jsp" />
+      </result>
+      <result name="modifysuccess" />
+      <result name="queryprivilsuc">
+        <resourceEdge source="queryprivilsuc" routing="0" target="rolePrivilege.jsp" />
+      </result>
+    </action>
+    <action name="positionManage*" location="0,0" size="0,0">
+      <result name="querysuccess">
+        <resourceEdge source="querysuccess" routing="0" target="positionShow.jsp" />
+      </result>
+      <result name="queryOneSuccess">
+        <resourceEdge source="queryOneSuccess" routing="0" target="positionShow.jsp" />
+      </result>
+      <result name="deleteSuccess" />
+      <result name="modifyOneSuccess">
+        <resourceEdge source="modifyOneSuccess" routing="0" target="positionModify.jsp" />
+      </result>
+    </action>
+    <action name="orgManage*" location="0,0" size="0,0">
+      <result name="querysuccess">
+        <resourceEdge source="querysuccess" routing="0" target="orgShow.jsp" />
+      </result>
+      <result name="addsuccess">
+        <resourceEdge source="addsuccess" routing="0" target="orgShow.jsp" />
+      </result>
+      <result name="queryOneSuccess">
+        <resourceEdge source="queryOneSuccess" routing="0" target="orgShow.jsp" />
+      </result>
+      <result name="modifyOneSuccess">
+        <resourceEdge source="modifyOneSuccess" routing="0" target="orgModify.jsp" />
+      </result>
+      <result name="deleteSuccess" />
+    </action>
+    <action name="menuManage*" location="0,0" size="0,0">
+      <result name="querysuccess">
+        <resourceEdge source="querysuccess" routing="0" target="menuShow.jsp" />
+      </result>
+      <result name="queryOneSuccess">
+        <resourceEdge source="queryOneSuccess" routing="0" target="menuShow.jsp" />
+      </result>
+      <result name="modifyOneSuccess">
+        <resourceEdge source="modifyOneSuccess" routing="0" target="menuModify.jsp" />
+      </result>
+    </action>
+    <action name="companyManage*" location="0,0" size="0,0">
+      <result name="querysuccess">
+        <resourceEdge source="querysuccess" routing="0" target="companyShow.jsp" />
+      </result>
+      <result name="queryOneSuccess">
+        <resourceEdge source="queryOneSuccess" routing="0" target="companyShow.jsp" />
+      </result>
+      <result name="modifyOneSuccess">
+        <resourceEdge source="modifyOneSuccess" routing="0" target="companyModify.jsp" />
+      </result>
+      <result name="deletesuccess" />
+    </action>
+  </package>
+  <package name="baseinfo" location="0,0" size="0,0">
+    <action name="baseInfoManage*" location="0,0" size="0,0">
+      <result name="querysuccess">
+        <resourceEdge source="querysuccess" routing="0" target="baseInfoList.jsp" />
+      </result>
+      <result name="deletesuccess">
+        <resourceEdge source="deletesuccess" routing="0" target="baseInfoList.jsp" />
+      </result>
+      <result name="addsuccess">
+        <resourceEdge source="addsuccess" routing="0" target="baseInfoAdd.jsp" />
+      </result>
+<<<<<<< .struts.mex
+      <result name="jumpAdd">
+        <resourceEdge source="jumpAdd" routing="0" target="baseInfoAdd.jsp" />
+      </result>
+=======
+      <result name="queryforupdate">
+        <resourceEdge source="queryforupdate" routing="0" target="baseInfoModify.jsp" />
+      </result>
+      <result name="updatesuccess" />
+>>>>>>> 1.8
+    </action>
+  </package>
+  <webResource name="index.jsp" path="/index.jsp" location="0,0" size="0,0" />
+  <webResource name="userLogin.jsp" path="/userLogin.jsp" location="0,0" size="0,0" />
+  <webResource name="userShow.jsp" path="/page/sysmanage/userShow.jsp" location="0,0" size="0,0" />
+  <webResource name="userModify.jsp" path="/page/sysmanage/userModify.jsp" location="0,0" size="0,0" />
+  <webResource name="getOrgTree.jsp" path="/page/sysmanage/getOrgTree.jsp" location="0,0" size="0,0" />
+  <webResource name="userPositionModify.jsp" path="/page/sysmanage/userPositionModify.jsp" location="0,0" size="0,0" />
+  <webResource name="getPositionTree.jsp" path="/page/sysmanage/getPositionTree.jsp" location="0,0" size="0,0" />
+  <webResource name="userResetPwd.jsp" path="&quot;/page/sysmanage/userResetPwd.jsp" location="0,0" size="0,0" />
+  <webResource name="roleModify.jsp" path="/page/sysmanage/roleModify.jsp" location="0,0" size="0,0" />
+  <webResource name="roleAdd.jsp" path="/page/sysmanage/roleAdd.jsp" location="0,0" size="0,0" />
+  <webResource name="roleModifyFunc.jsp" path="/page/sysmanage/roleModifyFunc.jsp" location="0,0" size="0,0" />
+  <webResource name="rolePrivilege.jsp" path="/page/sysmanage/rolePrivilege.jsp" location="0,0" size="0,0" />
+  <webResource name="positionShow.jsp" path="/page/sysmanage/positionShow.jsp" location="0,0" size="0,0" />
+  <webResource name="positionModify.jsp" path="/page/sysmanage/positionModify.jsp" location="0,0" size="0,0" />
+  <webResource name="orgShow.jsp" path="/page/sysmanage/orgShow.jsp" location="0,0" size="0,0" />
+  <webResource name="orgModify.jsp" path="/page/sysmanage/orgModify.jsp" location="0,0" size="0,0" />
+  <webResource name="menuShow.jsp" path="/page/dtree/menuShow.jsp" location="0,0" size="0,0" />
+  <webResource name="menuModify.jsp" path="/page/dtree/menuModify.jsp" location="0,0" size="0,0" />
+  <webResource name="companyShow.jsp" path="/page/sysmanage/companyShow.jsp" location="0,0" size="0,0" />
+  <webResource name="companyModify.jsp" path="/page/sysmanage/companyModify.jsp" location="0,0" size="0,0" />
+  <webResource name="baseInfoList.jsp" path="/page/baseinfo/baseInfoList.jsp" location="0,0" size="0,0" />
+  <webResource name="baseInfoAdd.jsp" path="/page/baseinfo/baseInfoAdd.jsp" location="0,0" size="0,0" />
+  <webResource name="baseInfoModify.jsp" path="/page/baseinfo/baseInfoModify.jsp" location="0,0" size="0,0" />
+  <extendsEdge source="sysmanage" target="default" routing="0" />
+  <extendsEdge source="baseinfo" target="default" routing="0" />
+</Struts2Diagram>
+

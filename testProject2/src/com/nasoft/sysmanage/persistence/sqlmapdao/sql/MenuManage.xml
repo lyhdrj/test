@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="MenuManage">
+
+    <typeAlias alias="menuVO" type="com.nasoft.sysmanage.model.MenuBean"/>
+    
+    <resultMap id="menuResult" class="menuVO">
+        <result property="menuID" column="menu_id"/>
+        <result property="menuName" column="menu_name"/>
+        <result property="menuFunc" column="menu_function"/>
+        <result property="parentMenuID" column="parent_menu_id"/>
+    </resultMap>
+    
+     <resultMap id="menuInfoResult" class="menuVO">
+        <result property="menuID" column="menu_id"/>
+        <result property="menuNum" column="menuNum"/>
+        <result property="menuName" column="menu_name"/>
+        <result property="menuType" column="menu_type"/>
+        <result property="menuFunc" column="menu_function"/>
+        <result property="parentMenuID" column="parent_menu_id"/>
+        <result property="parentMenuName" column="parent_menu_name"/>
+        <result property="status" column="status"/>
+    </resultMap>
+    
+    <resultMap id="allMenuInfoResult" class="menuVO">
+        <result property="menuID" column="menu_id"/>
+        <result property="menuName" column="menu_name"/>
+        <result property="menuType" column="menu_type"/>
+        <result property="menuFunc" column="menu_function"/>
+        <result property="parentMenuID" column="parent_menu_id"/>
+    </resultMap>
+
+   <select id="getMenuInfo" resultMap="menuResult">
+	select menu_id, menu_name, menu_function, parent_menu_id from tm_menu order by menu_id
+   </select>
+   
+   <select id="getMenuName" parameterClass="java.lang.String" resultClass="java.lang.String">
+   	select menu_name from tm_menu where menu_id=#menuID#
+   </select>
+   
+   <select id="getMenuFunc" parameterClass="java.lang.String" resultMap="menuInfoResult">
+   	select rownum as menuNum,t.menu_id, t.menu_name, t.menu_type, t.menu_function, t.parent_menu_id,(select menu_name from tm_menu where menu_id=#menuID#) as parent_menu_name,decode(t.status,0,'无效',1,'有效') status 
+   	from tm_menu t where t.parent_menu_id=#menuID# 
+   	order by rownum
+   </select>
+   <select id="getAllMenuFunc" resultMap="allMenuInfoResult">
+   	select menu_id, menu_name, menu_type, menu_function, parent_menu_id from tm_menu order by menu_id
+   </select>
+   
+   <insert id="addMenuFunc" parameterClass="menuVO">
+   	insert into TM_MENU(menu_id, menu_name,menu_type, menu_function, parent_menu_id,status,  create_date, create_by) 
+   	values(SEQ_MENU.nextval,#menuName#,#parentMenuID#,#menuFunc#,#parentMenuID#,#status#,sysdate,#userId#)
+   </insert>
+   
+   <select id="getOneMenuFunc" parameterClass="java.lang.String" resultMap="menuInfoResult">
+   	select  rownum as menuNum, menu_id, menu_name, menu_type, menu_function, parent_menu_id,
+   	(select menu_name from tm_menu where menu_id=(select parent_menu_id from tm_menu where menu_id=#menuID#)) as PARENT_MENU_NAME,
+   	status from tm_menu 
+   	where menu_id=#menuID#
+   </select>
+   
+   <update id="updateOneMenuFunc" parameterClass="menuVO">
+   	update tm_menu  set  menu_name =#menuName#, menu_type =#parentMenuID#, menu_function =#menuFunc#, parent_menu_id =#parentMenuID#,status=#status#,  create_date = sysdate, create_by =#userId#  
+   	where menu_id = #menuID#
+   </update>
+   
+   <select id="getMenuCount" parameterClass="java.lang.String" resultClass="java.lang.Integer">
+   	select count(*) from tm_menu where menu_id=#menuID#
+   </select>
+   
+   <select id="getSubMenuCount" parameterClass="java.lang.String" resultClass="java.lang.Integer">
+   	 select count(*) from tm_menu where parent_menu_id = #menuID#
+   </select>
+   
+   <delete id="deleteMenu" parameterClass="java.lang.String">
+    delete from tm_menu where menu_id = #menuID#
+   </delete>
+   
+   <select id="getParentId" parameterClass="java.lang.String" resultClass="java.lang.String">
+   	select parent_menu_id from tm_menu where menu_id=#menuID#
+   </select>
+   
+   <delete id="deleteMenuRole" parameterClass="java.lang.String">
+   	delete tm_menu_role where menu_id = #menuID#
+   </delete>
+    <select id="checkInsert" parameterClass="menuVO" resultClass="java.lang.Integer">
+   		select count(*) from tm_menu where menu_name=#menuName# and parent_menu_id = #parentMenuID#
+   </select>
+</sqlMap>

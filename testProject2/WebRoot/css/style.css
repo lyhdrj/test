@@ -1,0 +1,146 @@
+BODY {
+	FONT-SIZE: 12px; MARGIN: 0px;
+	scrollbar-base-color:#547E1F;
+scrollbar-face-color:#B0CF76;
+scrollbar-track-color:#547E1F;
+scrollbar-arrow-color:#547E1F;
+scrollbar-3dlight-color:#547E1F;
+scrollbar-highlight-color:#547E1F;
+scrollbar-shadow-color:#547E1F;
+scrollbar-darkshadow-color:#547E1F;
+	background-color: #E9EFDC;
+}
+
+INPUT{
+	BORDER-RIGHT: #7c98c8 1px solid;
+	BORDER-TOP: #7c98c8 1px solid;
+	FONT-SIZE: 12px;
+	BORDER-LEFT: #7c98c8 1px solid;
+	COLOR:#0769e3;
+	BORDER-BOTTOM: #7c98c8 1px solid;
+	HEIGHT: 17px;
+	BACKGROUND-COLOR: #FFF;
+	background-position: left;
+	}
+SELECT {
+	FONT-SIZE: 12px; COLOR: #0769e3; BACKGROUND-COLOR: #FFF
+}
+
+TEXTAREA {
+	BORDER-RIGHT: #72a5d9 1px solid; BORDER-TOP: #72a5d9 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #72a5d9 1px solid; COLOR: #0769e3; BORDER-BOTTOM: #72a5d9 1px solid; BACKGROUND-COLOR: #FFF
+}
+.updown {
+	BORDER-TOP: #72a5d9 1px solid; BORDER-BOTTOM: #72a5d9 1px solid
+}
+.noright {
+	BORDER-TOP: #72a5d9 1px solid; BORDER-LEFT: #72a5d9 1px solid; BORDER-BOTTOM: #72a5d9 1px solid
+}
+.noleft {
+	BORDER-RIGHT: #72a5d9 1px solid; BORDER-TOP: #72a5d9 1px solid; BORDER-BOTTOM: #72a5d9 1px solid
+}
+A:link {
+	COLOR: #0033ff; TEXT-DECORATION: underline
+}
+A:visited {
+	COLOR: #0033ff; TEXT-DECORATION: underline
+}
+A:hover {
+	COLOR: #ff0000; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #0033ff; TEXT-DECORATION: underline
+}
+A.navigation:link {
+	COLOR: #0033ff; TEXT-DECORATION: underline
+}
+A.navigation:visited {
+	COLOR: #cc33ff; TEXT-DECORATION: underline
+}
+A.navigation:hover {
+	COLOR: #ff0000; TEXT-DECORATION: none
+}
+A.navigation:active {
+	COLOR: #0033ff; TEXT-DECORATION: none
+}
+/*------------------------------------------------------
+描  述:黄色背景 12号特粗体宋体字
+------------------------------------------------------*/
+.head{width:auto;height:30px; background-image:url(../images/manager/nr_dh-1.gif); padding-left:30px;vertical-align: middle;}
+.head p{font-size: 9pt;font-family: "Arial", "Helvetica", "sans-serif","宋体", ;float:left; margin:0; padding-top:10px;}
+.head span{width:10px; height:30px;background-image:url(../images/manager/nr_dh-2.gif); background-repeat:no-repeat; float:right; clear:none;}
+table.listTable {
+	border-width: 0px;
+	border-color: #E6E6E6;
+	border-collapse: collapse;	
+	font-family:Arial;
+	font-size:12;
+}
+table.listTable th {
+	padding: 1px;
+	border-width: 1px;
+	border-style: solid;
+	background-color: #EEEEEE;
+}
+table.listTable td {
+	padding:2px;
+	border-width: 1px;
+	border-style: solid;
+	background-color: #F8F8F8;
+	text-align: center;
+}
+.td_style2 {
+	border-left: 1 solid #FFFFFF;
+	border-top: 1 solid #FFFFFF;
+	background-color: #547E1F;
+	color:#E9F0B6;;
+	cursor: default;
+	text-align:center;
+}
+
+/*------------------------------------------------------
+描述：为所有表单按扭加入背景
+创建者：曹振海  日期：20090803
+-------------------------------------------------------*/
+.input_img{
+	background-image:url(../images/manager/nr_btn_1.gif);
+	border:0;
+	FONT-SIZE: 9pt;
+	HEIGHT: 22px;
+	width: 78px;
+	text-align: center;
+	padding-top: 4px;
+	color:#fff;
+}
+/*------------------------------------------------------
+描述：为所有表单按扭加入背景,中型按钮
+创建者：曹振海  日期：20090805
+-------------------------------------------------------*/
+.input_big{
+	background-image:url(../images/manager/big.gif);
+	background-repeat:no-repeat;
+	border:0;
+	FONT-SIZE: 9pt;
+	HEIGHT: 22px;
+	width: 90px;
+	text-align: center;
+	padding-top: 4px;
+	padding-left:2px;
+	color:#fff;
+}
+/*------------------------------------------------------
+描述：为所有表单按扭加入背景，特大按钮
+创建者：曹振海  日期：20090805
+-------------------------------------------------------*/
+.input_vbig{
+	background-image:url(../images/manager/vbig.gif);
+	background-repeat:no-repeat;
+	border:0;
+	FONT-SIZE: 9pt;
+	HEIGHT: 22px;
+	width: 150px;
+	text-align: center;
+	padding-top: 4px;
+	padding-left:2px;
+	color:#fff;
+}
+hr{background-color:#B0CF76;height:5px;}

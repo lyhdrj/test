@@ -1,0 +1,18 @@
+/*------------------------------------------------------
+描  述：实现表头固定功能
+------------------------------------------------------*/
+
+ .FixedDataColumn
+ { position: relative;
+   left: expression(this.parentElement.offsetParent.parentElement.scrollLeft);
+   background-color: #E6ECF0;
+ }
+ .FixedColumnAndRows{
+   position: relative;
+   top: expression(this.offsetParent.scrollTop);
+   left: expression(this.offsetParent.scrollLeft);
+   z-index: 20;
+   width: 80px;
+   background-color: #FFCC00;
+ }
+ td{word-break : keep-all;}

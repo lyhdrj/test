@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN"
+        "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+    <settings
+            cacheModelsEnabled="true"
+            enhancementEnabled="true"
+            useStatementNamespaces="true"
+            maxSessions="64"
+            maxTransactions="8"
+            maxRequests="128"/>
+            
+    <sqlMap resource="com/nasoft/sysmanage/persistence/sqlmapdao/sql/UserLogin.xml"/>
+  	<!-- 单位管理 -->
+    <sqlMap resource="com/nasoft/sysmanage/persistence/sqlmapdao/sql/CompanyManage.xml"/>
+    <!-- 部门管理 -->
+    <sqlMap resource="com/nasoft/sysmanage/persistence/sqlmapdao/sql/OrgManage.xml"/>
+    <!-- 角色管理 -->
+    <sqlMap resource="com/nasoft/sysmanage/persistence/sqlmapdao/sql/RoleManage.xml"/>
+    <!-- 菜单管理 -->
+    <sqlMap resource="com/nasoft/sysmanage/persistence/sqlmapdao/sql/MenuManage.xml"/>
+    <!-- 职位管理 -->
+    <sqlMap resource="com/nasoft/sysmanage/persistence/sqlmapdao/sql/PositionManage.xml"/>
+    <!-- 用户管理 -->
+    <sqlMap resource="com/nasoft/sysmanage/persistence/sqlmapdao/sql/UserManage.xml"/>
+    <!-- 重置用户密码 -->
+    <sqlMap resource="com/nasoft/sysmanage/persistence/sqlmapdao/sql/UserResetPwd.xml"/>
+    <!-- 基本信息管理 -->
+    <sqlMap resource="com/nasoft/baseinfo/persistence/sqlmapdao/sql/BaseInfo.xml"/>
+    <!-- 日志管理 -->
+    <sqlMap resource="com/nasoft/log/persistence/sqlmapdao/sql/LogManage.xml"/>
+    <!-- 报表管理 -->
+    <sqlMap resource="com/nasoft/sysmanage/persistence/sqlmapdao/sql/ReportManage.xml"/>
+</sqlMapConfig>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+ 
+	<filter>
+        <filter-name>UserAuthFilter</filter-name>
+        <filter-class>com.nasoft.filter.UserAuthFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>GBK</param-value>
+        </init-param>
+     </filter>
+    <filter-mapping>
+         <filter-name>UserAuthFilter</filter-name>
+         <url-pattern>/page/*</url-pattern>
+    </filter-mapping>
+    
+  <listener>    
+	<listener-class>org.springframework.web.util.Log4jConfigListener
+	</listener-class>    
+  </listener>
+	<listener>
+		<listener-class>
+			org.apache.struts2.tiles.StrutsTilesListener
+		</listener-class>
+	</listener>
+  <jsp-config>
+  <taglib>
+	<taglib-uri>/pages</taglib-uri>  
+	<taglib-location>/WEB-INF/tld/Pages.tld</taglib-location> 
+  </taglib>
+ <taglib>
+	<taglib-uri>http://mytablib/mytab</taglib-uri>  
+	<taglib-location>/WEB-INF/tld/mytaglib.tld</taglib-location> 
+  </taglib>
+
+  </jsp-config>
+  
+  <filter>
+        <filter-name>Struts2</filter-name>
+        <filter-class>
+			org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
+        </filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>Struts2</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <!-- 指明spring配置文件在何处 -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:spring.xml</param-value>
+    </context-param>
+
+  <listener>
+  	<listener-class>
+            org.springframework.web.context.ContextLoaderListener
+  	</listener-class>
+  </listener>
+    
+  <welcome-file-list>
+    <welcome-file>userLogin.jsp</welcome-file>
+  </welcome-file-list>
+	 
+</web-app>
+

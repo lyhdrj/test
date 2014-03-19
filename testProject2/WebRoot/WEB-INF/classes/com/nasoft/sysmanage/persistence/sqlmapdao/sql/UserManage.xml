@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="UserManage">
+
+    <typeAlias alias="userTreeBean" type="com.nasoft.sysmanage.model.UserTreeBean"/>
+    <typeAlias alias="userStatusBean" type="com.nasoft.sysmanage.model.UserStatusBean"/>
+    <typeAlias alias="positionBean" type="com.nasoft.sysmanage.model.PositionBean"/>
+    <typeAlias alias="userBean" type="com.nasoft.sysmanage.model.UserBean"/>
+    
+    <resultMap id="userTreeResult" class="UserTreeBean">
+        <result property="code" column="code"/>
+        <result property="name" column="name"/>
+        <result property="parentCode" column="parentCode"/>
+        <result property="status" column="status"/>
+    </resultMap>
+    
+    <resultMap id="userStatusResult" class="userStatusBean">
+        <result property="statusID" column="status_id"/>
+        <result property="statusName" column="status"/>
+    </resultMap>
+    
+     <resultMap id="positionResult" class="positionBean">
+       <result property="positionName" column="position_name"/>
+       <result property="comCode" column="company_code"/>
+     </resultMap>
+     
+     <resultMap id="userInfoResult" class="userBean">
+       <result property="userID" column="user_id"/>
+       <result property="number" column="rownum"/>
+       <result property="userName" column="user_name"/>
+       <result property="pinYinName" column="pinyin_name"/>
+       <result property="realName" column="real_name"/>
+       <result property="managementCode" column="management_code"/>
+       <result property="comCode" column="company_code"/>
+     </resultMap>
+     
+     <resultMap id="userResult" class="userBean">
+       <result property="userID" column="user_id"/>
+       <result property="comCode" column="company_code"/>
+       <result property="userName" column="user_name"/>
+       <result property="pinYinName" column="pinyin_name"/>
+       <result property="realName" column="real_name"/>
+       <result property="sex" column="sex"/>
+       <result property="mobilePhone" column="mobile_phone"/>
+       <result property="email" column="email"/>
+       <result property="birthday" column="birthday"/>
+       <result property="address" column="address"/>
+       <result property="zipcode" column="zip_code"/>
+       <result property="managementCode" column="management_code"/>
+       <result property="isLogin" column="is_login"/>
+       <result property="positionName" column="position_name"/>
+       <result property="positionID" column="position_id"/>
+   </resultMap>
+	<parameterMap id="userBean-paraMap" class="userBean">   
+	    <parameter property="userID"/>   
+	    <parameter property="comCode"/>   
+	    <parameter property="userName"/>   
+	    <parameter property="pinYinName"  jdbcType="VARCHAR"/>   
+	    <parameter property="password"/>   
+	    <parameter property="realName"/>   
+	    <parameter property="sex"  jdbcType="VARCHAR"/>   
+	    <parameter property="mobilePhone"  jdbcType="VARCHAR"/>     
+	    <parameter property="email"  jdbcType="VARCHAR"/>   
+	    <parameter property="birthday"  jdbcType="Date"/>   
+	    <parameter property="address"  jdbcType="VARCHAR"/>   
+	    <parameter property="zipcode"  jdbcType="VARCHAR"/>     
+	    <parameter property="createBy"  jdbcType="VARCHAR"/>  
+	    <parameter property="isLogin"  jdbcType="VARCHAR"/>  
+	    <parameter property="managementCode"  jdbcType="VARCHAR"/>  
+	</parameterMap>
+   <select id="getUserPosition" resultMap="userTreeResult">
+	((select company_code as code, company_name as name, parent_com_code as parentCode, status from tm_company)
+	 union (select org_code, org_name, parent_org_code,  status from tm_org)
+	 union (select to_char('p' || position_id), position_name, org_code,  status from tm_position)
+	 union (select to_char(t.user_id), t.real_name, 'p' || h.position_id as positionid, 4 from tm_user t, tm_position_user h where t.user_id = h.user_id))
+   </select>
+   
+   <select id="getUserPositionInfo" parameterClass="java.lang.String" resultMap="userTreeResult">
+   	select code, name, parentcode, status from
+	((select company_code as code, company_name as name, parent_com_code as parentCode, status from tm_company)
+	 union (select org_code, org_name, parent_org_code, status from tm_org)
+	 union (select to_char('p' || position_id), position_name, org_code,status from tm_position)
+	 union (select to_char(t.user_id), t.real_name, 'p' || h.position_id as positionid, 4 from tm_user t, tm_position_user h where t.user_id = h.user_id))
+	 start with code =#managementCode#
+	 connect by prior parentcode = code
+	 union select code, name, parentcode, status from
+	 ((select company_code as code, company_name as name, parent_com_code as parentCode, status from tm_company)
+	 union (select org_code, org_name, parent_org_code, status from tm_org)
+	 union (select to_char('p' || position_id), position_name, org_code, status from tm_position)
+	 union (select to_char(t.user_id), t.real_name, 'p' || h.position_id as positionid, 4 from tm_user t, tm_position_user h where t.user_id = h.user_id))
+	 where status!=1  start with code = #managementCode#
+	 connect by prior code = parentcode
+   </select>
+
+   <select id="getUserDepartment" parameterClass="java.lang.String" resultClass="java.lang.String">
+   	(select status from tm_company where company_code=#managementCode#)
+   	union 
+   	(select status from tm_org where org_code=#managementCode#)
+   </select>
+   
+   <select id="getPositionName" parameterClass="java.lang.String" resultMap="positionResult">
+   	select position_name,company_code from tm_position where position_id=#positionID#
+   </select>
+   
+   <select id="getUserInfo" parameterClass="java.lang.String" resultMap="userInfoResult">
+   	select rownum,user_id, user_name, pinyin_name, real_name,management_code,company_code 
+   	from tm_user where user_id in(select user_id from tm_position_user where position_id=#positionId#)
+   </select>
+   
+   <select id="getAllUserCount" parameterClass="java.lang.String" resultClass="java.lang.Integer">
+   	select count(*) from tm_user where user_id in(select user_id from tm_position_user where position_id=#positionId#)
+   </select>
+   
+   <select id="getDepartmentByCode" parameterClass="java.lang.String" resultClass="java.lang.String">
+   	(select company_name name from tm_company where company_code=#code#)
+   	union
+   	(select org_name name from tm_org where org_code=#code#)
+   </select>
+   
+   <select id="getUserCount" parameterClass="userBean" resultClass="java.lang.Integer">
+   	select count(*) from tm_user where user_id=#userID# and company_code=#comCode#
+   </select>
+   
+   <select id="getOrgTree" parameterClass="java.lang.String" resultMap="userTreeResult">
+   	select code, name, parentcode, status from
+	((select company_code as code, company_name as name, parent_com_code as parentCode, status from tm_company)
+	union (select org_code, org_name, parent_org_code, status from tm_org)) where status!=1 or (status=1 and code=#companyCode#) 
+	start with code = #companyCode#
+	connect by prior code = parentcode
+   </select>
+   
+   <select id="getUserId" resultClass="java.lang.Integer">
+   	select Seq_User.Nextval as userID from dual
+   </select>
+   
+   <insert id="insertUserInfo" parameterMap="userBean-paraMap">
+   	insert into tm_user(user_id, company_code, user_name, pinyin_name, password, real_name, sex, mobile_phone, email, birthday, address, zip_code, create_date, create_by,is_login,MANAGEMENT_CODE) 
+   	values(?,?,?,?,?,?,?,?,?,to_date(?,'YYYY-MM-DD'),?,?, sysdate,?,?,?)
+   </insert>
+   
+   <insert id="insertPositionUser" parameterClass="userBean">
+   	insert into tm_position_user (id, position_id, user_id, create_date, create_by, company_code) 
+   	values(seq_position_user.nextval,#positionID#,#userID#, sysdate,#createBy#,#comCode#)
+   </insert>
+   
+   <select id="getMenuId" parameterClass="userBean" resultClass="java.lang.String">
+   	select menu_id from TM_MENU WHERE MENU_ID IN (select MENU_ID from tm_menu_role where ROLE_ID=(select ROLE_ID from TM_POSITION_ROLE where POSITION_ID=(select POSITION_ID from TM_POSITION_USER 
+   	where USER_ID=#userID#)) and menu_id in ($funcPwdMenuId$)) 
+   	order by menu_id
+   </select>
+   
+   <select id="getFuncPwdCount" parameterClass="userBean" resultClass="java.lang.Integer">
+   	select count(*) from tt_function_pwd 
+   	where user_id=#userID# and company_code=#comCode# and func_name=#funcName#
+   </select>
+   
+   <insert id="insertFuncPwd" parameterClass="userBean">
+   	insert into tt_function_pwd(func_name, user_id, func_pwd, company_code, func_cnname) 
+   	values(#funcName#,#userID#,#password#,#comCode#,#funcCnName#)
+   </insert>
+   
+   <insert id="insertUserInfoB" parameterClass="userBean">
+   	insert into tm_user(user_id, company_code, user_name) values(#userID#,#comCode#,#userName#)
+   </insert>
+   
+   <select id="getOneUserInfo" parameterClass="java.lang.String" resultMap="userResult">
+   	select t.user_id, t.company_code, t.user_name, t.pinyin_name,t.real_name,t.sex,t.mobile_phone,t.email,to_char(t.birthday,'yyyy-mm-dd') as birthday,t.address
+   	,t.zip_code,t.is_login,t.management_code,h.position_name,h.position_id 
+   	from tm_user t,tm_position h,tm_position_user s 
+   	where t.user_id=s.user_id and h.position_id=s.position_id and t.user_id=#userID#
+   </select>
+   
+   <select id="getUserCountB" parameterClass="userBean" resultClass="java.lang.Integer">
+   	select count(*) from tm_user where user_id=#userID# and  company_code=#comCode#
+   </select>
+   
+   <select id="checkLoginName" parameterClass="java.lang.String" resultClass="java.lang.Integer">
+   	select count(*) from tm_user where user_name=#userName#
+   </select>
+   
+   <update id="updateUserInfo" parameterClass="userBean">
+   	update tm_user set pinyin_name =#pinYinName:VARCHAR:NULL#, real_name =#realName#,sex =#sex:VARCHAR:NULL#,mobile_phone =#mobilePhone:VARCHAR:NULL#,email =#email:VARCHAR:NULL#,
+   	birthday = to_date(#birthday#,'YYYY-MM-DD'),address = #address:VARCHAR:NULL#,zip_code = #zipcode:VARCHAR:NULL#,
+	create_date = sysdate,create_by =#createBy:VARCHAR:NULL#,is_login =#isLogin:VARCHAR:NULL#,management_code=#managementCode:VARCHAR:NULL# where user_id = #userID#
+   </update>
+   
+   <update id="updatePositionInfo" parameterClass="userBean">
+   	update tm_position_user  set  position_id =#positionID#, create_date = sysdate, create_by =#createBy# where user_id =#userID#
+   </update>
+   
+   <update id="resetPassword" parameterClass="userBean">
+    update tm_user set password = #password# where user_id =#userID#
+   </update>
+   
+   <delete id="deleteUserInfo" parameterClass="java.lang.String">
+    delete from tm_user where user_id =#userID#
+   </delete>   
+   <delete id="deleteUserPositionInfo" parameterClass="java.lang.String">
+    delete from tm_position_user where user_id =#userID#
+   </delete>
+</sqlMap>

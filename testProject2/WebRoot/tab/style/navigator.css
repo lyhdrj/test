@@ -1,0 +1,51 @@
+BODY 
+{ 
+font-family:Verdana; 
+cursor:default; 
+font-size:9pt; 
+} 
+
+TABLE 
+{ 
+font-size:110%; 
+} 
+
+A 
+{ 
+color:"#003366"; 
+text-decoration:none; 
+} 
+
+A:hover 
+{ 
+text-decoration:underline; 
+color:#003366; 
+} 
+
+DIV IMG 
+{ 
+MARGIN-BOTTOM: 0px; 
+MARGIN-RIGHT: 5px; 
+MARGIN-TOP: -3px; 
+VERTICAL-ALIGN: middle 
+} 
+
+DIV A:hover 
+{ 
+BACKGROUND-COLOR: greenyellow 
+} 
+DIV A 
+{ 
+FONT-WEIGHT: normal; 
+MARGIN-RIGHT: 5px; 
+VERTICAL-ALIGN: middle 
+} 
+
+.Navigator 
+{ 
+color: #003366; 
+} 
+.Navigator-Hidden 
+{ 
+display:none; 
+} 

@@ -1,0 +1,10 @@
+Object execute(){
+a=1;
+b=a++;
+System.out.println("a="+a);
+print(b);
+print("------¿ªÊ¼ÁË-------");
+com.test.Test2.populate("ddddd");
+return null;
+}
+return (com.test.Executable)this;

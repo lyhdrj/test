@@ -1,0 +1,37 @@
+.PageSize{
+	border:none;
+	color:#FF0000;
+	font-size:12px
+}
+a:link {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: normal;	
+}
+a:visited {
+	font-size: 12px;
+	text-decoration: none;
+	color: #000000;
+	font-weight: normal;
+}
+a:hover {
+	font-size: 12px;
+	text-decoration: none;
+	color: #000000;
+	font-weight: normal;
+}
+a:active {
+	font-size: 12px;
+	text-decoration: none;
+	color: #000000;
+	font-weight: normal;
+}
+body {
+	font-size: 12px;
+	line-height:140%;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}

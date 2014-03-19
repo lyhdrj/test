@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/trainNotice.do" location="1760,1256" dimension="358,84" />
+  <StrutsActivity path="/truckNotice.do" location="499,979" dimension="358,84" />
+  <StrutsActivity path="/trainPayoutInformPress.do" location="272,1256" dimension="358,84" />
+  <StrutsActivity path="/ttNoticeS.do" location="1209,2364" dimension="358,84" />
+  <StrutsActivity path="/trainTraNotice.do" location="1261,1533" dimension="358,84" />
+  <StrutsActivity path="/TrainplanApplyAction.do" location="607,702" dimension="358,84" />
+  <StrutsActivity path="/trainplanApplyDSAction.do" location="1612,2364" dimension="358,84" />
+  <StrutsActivity path="/trainNeedMoney.do" location="1814,979" dimension="358,84" />
+  <StrutsActivity path="/tsaDetail.do" location="2015,2364" dimension="358,84" />
+  <StrutsActivity path="/trainNotifyCarNo.do" location="0,2087" dimension="358,84" />
+  <StrutsActivity path="/truckNotices.do" location="2418,2364" dimension="358,84" />
+  <StrutsActivity path="/truckNoticeFinish.do" location="0,2641" dimension="358,84" />
+  <StrutsActivity path="/woodSaleSelect.do" location="275,1533" dimension="358,84" />
+  <StrutsActivity path="/pwd.do" location="403,2087" dimension="358,84" />
+  <StrutsActivity path="/trainPlanApplyInsertAction.do" location="691,425" dimension="358,84" />
+  <StrutsActivity path="/trainPlanApplySelect.do" location="1494,0" dimension="358,84" />
+  <StrutsActivity path="/TrainPriaceAction.do" location="806,2087" dimension="358,84" />
+  <StrutsActivity path="/SaleaccountAction.do" location="1209,2087" dimension="358,84" />
+  <StrutsActivity path="/TransferorderTrainPriaceAction.do" location="1612,2087" dimension="358,84" />
+  <StrutsActivity path="/SaleaccountpriceDiaolingAction.do" location="403,2641" dimension="358,84" />
+  <StrutsActivity path="/trainInvoice.do" location="806,2641" dimension="358,84" />
+  <StrutsActivity path="/branchInvoice.do" location="2015,2087" dimension="358,84" />
+  <StrutsActivity path="/truckInvoice.do" location="1209,2641" dimension="358,84" />
+  <StrutsActivity path="/trainSalesDailySheet.do" location="1612,2641" dimension="358,84" />
+  <StrutsActivity path="/truckSalesDailySheet.do" location="2015,2641" dimension="358,84" />
+  <StrutsActivity path="/invoiceSelect.do" location="2418,2641" dimension="358,84" />
+  <StrutsActivity path="/timberOverSituation.do" location="0,2770" dimension="358,84" />
+  <StrutsActivity path="/priceListOfWoodSaleByMonth.do" location="2418,2087" dimension="358,84" />
+  <StrutsActivity path="/trainSalesJournalSheet.do" location="403,2770" dimension="358,84" />
+  <StrutsActivity path="/truckSalesJournalSheet.do" location="806,2770" dimension="358,84" />
+  <StrutsActivity path="/allSalesJournalSheet.do" location="0,2364" dimension="358,84" />
+  <StrutsActivity path="/woodFlowPReport.do" location="1209,2770" dimension="358,84" />
+  <StrutsActivity path="/woodFlowTReport.do" location="1612,2770" dimension="358,84" />
+  <StrutsActivity path="/railwayTimberSituation.do" location="2015,2770" dimension="358,84" />
+  <StrutsActivity path="/productionMSS.do" location="2418,2770" dimension="358,84" />
+  <StrutsActivity path="/remainderSaleProc.do" location="403,2364" dimension="358,84" />
+  <StrutsActivity path="/woodBranchNotice.do" location="806,2364" dimension="358,84" />
+  <StrutsActivity path="/brachNoticeSelect.do" location="109,148" dimension="358,84" />
+  <StrutsActivity path="/deleteTrainNotice.do" location="802,1810" dimension="358,84" />
+  <StrutsActivity path="/deleteTruckNotice.do" location="1435,1810" dimension="358,84" />
+  <StrutsActivity path="/deleteRemainderNotice.do" location="145,1810" dimension="358,84" />
+  <StrutsActivity path="/deleteWoodBranchNotice.do" location="2069,1533" dimension="358,84" />
+  <StrutsActivity path="/goodsNotesPress.do" location="2044,1810" dimension="358,84" />
+  <StrutsActivity path="/page/sale/trainNoticeInsert.jsp" location="1297,1440" dimension="232,48" />
+  <StrutsActivity path="/page/sale/trainNoticeUpdateFirst.jsp" location="1629,1440" dimension="262,48" />
+  <StrutsActivity path="/page/sale/trainNoticeUpdateMain.jsp" location="1991,1440" dimension="256,48" />
+  <StrutsActivity path="/page/sale/stationTree.jsp" location="2347,1440" dimension="196,48" />
+  <StrutsActivity path="/page/sale/truckNoticeSupplyInsert.jsp" location="0,1163" dimension="268,48" />
+  <StrutsActivity path="/page/sale/truckNoticeUpdateFirst.jsp" location="367,1163" dimension="262,48" />
+  <StrutsActivity path="/page/sale/truckNoticeUpdateMain.jsp" location="730,1163" dimension="256,48" />
+  <StrutsActivity path="/page/sale/truckNoticeInsert.jsp" location="1086,1163" dimension="232,48" />
+  <StrutsActivity path="/page/sale/trainPayoutInformPress.jsp" location="0,1440" dimension="262,48" />
+  <StrutsActivity path="/page/sale/allPress.jsp" location="362,1440" dimension="178,48" />
+  <StrutsActivity path="/page/sale/trainOrderNumSelect.jsp" location="640,1440" dimension="244,48" />
+  <StrutsActivity path="/page/sale/trainOrderNumSelectShow.jsp" location="984,1440" dimension="268,48" />
+  <StrutsActivity path="/page/sale/updateTrainTraNotice.jsp" location="977,1717" dimension="250,48" />
+  <StrutsActivity path="/page/sale/queryTrainNotice.jsp" location="1327,1717" dimension="226,48" />
+  <StrutsActivity path="/page/sale/trainSendNotice.jsp" location="1653,1717" dimension="220,48" />
+  <StrutsActivity path="/page/sale/trainpalnapplylist.jsp" location="0,886" dimension="238,48" />
+  <StrutsActivity path="/page/sale/trainpalnapplyshow.jsp" location="338,886" dimension="238,48" />
+  <StrutsActivity path="/page/sale/selecttraininfo.jsp" location="676,886" dimension="220,48" />
+  <StrutsActivity path="/page/sale/trainpalnapplymain.jsp" location="996,886" dimension="238,48" />
+  <StrutsActivity path="/page/sale/trainplanapply.jsp" location="1334,886" dimension="214,48" />
+  <StrutsActivity path="/page/sale/queryTrainNeedMoney.jsp" location="1363,1163" dimension="244,48" />
+  <StrutsActivity path="/page/sale/addTrainNeedMoney.jsp" location="1707,1163" dimension="232,48" />
+  <StrutsActivity path="/page/sale/updateTrainNeedMoney.jsp" location="2039,1163" dimension="250,48" />
+  <StrutsActivity path="/page/sale/showOneTrainNeedMoney.jsp" location="2389,1163" dimension="256,48" />
+  <StrutsActivity path="/page/sale/trainNotifyCarNo.jsp" location="66,2271" dimension="226,48" />
+  <StrutsActivity path="/page/sale/woodSaleSelect.jsp" location="0,1717" dimension="214,48" />
+  <StrutsActivity path="/page/sale/woodSaleSelectListOfTrain.jsp" location="314,1717" dimension="280,48" />
+  <StrutsActivity path="/page/sale/woodSaleSelectList.jsp" location="694,1717" dimension="238,48" />
+  <StrutsActivity path="/page/common/pwdPage.jsp" location="490,2271" dimension="184,48" />
+  <StrutsActivity path="/page/sale/trainplanapplyOrderSelectAll.jsp" location="0,609" dimension="298,48" />
+  <StrutsActivity path="/page/sale/showTrainOrderNum.jsp" location="398,609" dimension="232,48" />
+  <StrutsActivity path="/page/sale/trainplanapplyOrderSelect.jsp" location="730,609" dimension="280,48" />
+  <StrutsActivity path="/page/sale/showTrainOrderNumAll.jsp" location="1110,609" dimension="250,48" />
+  <StrutsActivity path="/page/sale/trainplanapplyInsert.jsp" location="1460,609" dimension="250,48" />
+  <StrutsActivity path="/page/sale/trainpalnapplylistSelect.jsp" location="621,204" dimension="274,48" />
+  <StrutsActivity path="/page/sale/trainpalnapplyshowSelect.jsp" location="995,204" dimension="274,48" />
+  <StrutsActivity path="/page/sale/selecttraininfoSelect.jsp" location="1369,204" dimension="256,48" />
+  <StrutsActivity path="/page/sale/showTrainPlanOneData.jsp" location="1725,204" dimension="250,48" />
+  <StrutsActivity path="/page/sale/trainpalnapplymainSelect.jsp" location="2075,204" dimension="274,48" />
+  <StrutsActivity path="/page/sale/trainplanapplySelect.jsp" location="2449,204" dimension="250,48" />
+  <StrutsActivity path="/page/sale/trainpriceupdate.jsp" location="872,2271" dimension="226,48" />
+  <StrutsActivity path="/page/sale/saleaccountprice.jsp" location="1275,2271" dimension="226,48" />
+  <StrutsActivity path="/invoiceOrderNum.jsp" location="1711,2271" dimension="160,48" />
+  <StrutsActivity path="/page/sale/branchInvoice.jsp" location="2090,2271" dimension="208,48" />
+  <StrutsActivity path="/page/sale/priceListOfWoodSaleByMonth.jsp" location="2454,2271" dimension="286,48" />
+  <StrutsActivity path="/page/sale/allSalesJournalSheet.jsp" location="54,2548" dimension="250,48" />
+  <StrutsActivity path="/page/sale/remainderProcInsert.jsp" location="460,2548" dimension="244,48" />
+  <StrutsActivity path="/page/sale/woodBranchNotice.jsp" location="872,2548" dimension="226,48" />
+  <StrutsActivity path="/page/sale/branchNoticeSelect.jsp" location="0,332" dimension="238,48" />
+  <StrutsActivity path="/page/sale/showBranchOrderNum.jsp" location="338,332" dimension="238,48" />
+  <StrutsActivity path="/page/sale/brachNoticeSelect.jsp" location="172,0" dimension="232,48" />
+  <StrutsActivity path="/page/sale/trainNoticeManageData.jsp" location="681,1994" dimension="256,48" />
+  <StrutsActivity path="/page/sale/trainNoticeManage.jsp" location="1037,1994" dimension="232,48" />
+  <StrutsActivity path="/page/sale/truckNoticeManageData.jsp" location="1314,1994" dimension="256,48" />
+  <StrutsActivity path="/page/sale/truckNoticeManage.jsp" location="1670,1994" dimension="232,48" />
+  <StrutsActivity path="/page/sale/remainderNoticeManageData.jsp" location="0,1994" dimension="280,48" />
+  <StrutsActivity path="/page/sale/remainderNoticeManage.jsp" location="380,1994" dimension="256,48" />
+  <StrutsActivity path="/page/sale/woodBranchNoticeManageData.jsp" location="1918,1717" dimension="286,48" />
+  <StrutsActivity path="/page/sale/woodBranchNoticeManage.jsp" location="2304,1717" dimension="262,48" />
+  <StrutsActivity path="/page/sale/goodsNotesPress.jsp" location="1947,1994" dimension="220,48" />
+  <StrutsActivity path="/page/sale/GoodsNotesPressShow.jsp" location="2267,1994" dimension="244,48" />
+  <StrutsTransition id="/trainPlanApplySelect.do,sessicireport,/page/sale/selecttraininfoSelect.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1643,84" />
+      <AbsolutePoint location="1643,174" />
+      <AbsolutePoint location="1497,174" />
+      <AbsolutePoint location="1497,204" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/deleteWoodBranchNotice.do,selectNoticeMainOne,/page/sale/woodBranchNoticeManageData.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2158,1617" />
+      <AbsolutePoint location="2158,1667" />
+      <AbsolutePoint location="2061,1667" />
+      <AbsolutePoint location="2061,1717" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/deleteRemainderNotice.do,selectNoticeMainOne,/page/sale/remainderNoticeManageData.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="234,1894" />
+      <AbsolutePoint location="234,1944" />
+      <AbsolutePoint location="140,1944" />
+      <AbsolutePoint location="140,1994" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/page/sale/allSalesJournalSheet.jsp,null,/allSalesJournalSheet.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="241,2548" />
+      <AbsolutePoint location="241,2498" />
+      <AbsolutePoint location="268,2498" />
+      <AbsolutePoint location="268,2448" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/woodSaleSelect.do,woodSaleSelectFirst,/page/sale/woodSaleSelect.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="334,1617" />
+      <AbsolutePoint location="334,1667" />
+      <AbsolutePoint location="107,1667" />
+      <AbsolutePoint location="107,1717" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/SaleaccountAction.do,traininfosessce,/page/sale/saleaccountprice.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1388,2171" />
+      <AbsolutePoint location="1388,2271" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/page/sale/branchInvoice.jsp,null,/branchInvoice.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2246,2271" />
+      <AbsolutePoint location="2246,2221" />
+      <AbsolutePoint location="2283,2221" />
+      <AbsolutePoint location="2283,2171" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/TrainplanApplyAction.do,succshow,/page/sale/trainpalnapplyshow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="714,786" />
+      <AbsolutePoint location="714,851" />
+      <AbsolutePoint location="457,851" />
+      <AbsolutePoint location="457,886" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/TrainplanApplyAction.do,succlist,/page/sale/trainpalnapplylist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="642,786" />
+      <AbsolutePoint location="642,821" />
+      <AbsolutePoint location="119,821" />
+      <AbsolutePoint location="119,886" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pwd.do,selectPwdFirst,/page/common/pwdPage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="582,2171" />
+      <AbsolutePoint location="582,2271" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/deleteTrainNotice.do,selectFirst,/page/sale/trainNoticeManage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1070,1894" />
+      <AbsolutePoint location="1070,1944" />
+      <AbsolutePoint location="1153,1944" />
+      <AbsolutePoint location="1153,1994" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/truckNotice.do,selectNoticeMainOne,/page/sale/truckNoticeUpdateMain.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="723,1063" />
+      <AbsolutePoint location="723,1128" />
+      <AbsolutePoint location="858,1128" />
+      <AbsolutePoint location="858,1163" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/goodsNotesPress.do,show,/page/sale/GoodsNotesPressShow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2312,1894" />
+      <AbsolutePoint location="2312,1944" />
+      <AbsolutePoint location="2389,1944" />
+      <AbsolutePoint location="2389,1994" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trainNotice.do,selectUpTrainNotice,/page/sale/trainNoticeUpdateFirst.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1894,1340" />
+      <AbsolutePoint location="1894,1405" />
+      <AbsolutePoint location="1760,1405" />
+      <AbsolutePoint location="1760,1440" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/woodSaleSelect.do,woodSaleSelectListOfTrain,/page/sale/woodSaleSelectListOfTrain.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="454,1617" />
+      <AbsolutePoint location="454,1717" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/deleteTruckNotice.do,selectFirst,/page/sale/truckNoticeManage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1703,1894" />
+      <AbsolutePoint location="1703,1944" />
+      <AbsolutePoint location="1786,1944" />
+      <AbsolutePoint location="1786,1994" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/brachNoticeSelect.do,show,/page/sale/showBranchOrderNum.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="377,232" />
+      <AbsolutePoint location="377,282" />
+      <AbsolutePoint location="457,282" />
+      <AbsolutePoint location="457,332" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/truckNotice.do,supplyMain,/page/sale/truckNoticeSupplyInsert.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="544,1063" />
+      <AbsolutePoint location="544,1098" />
+      <AbsolutePoint location="134,1098" />
+      <AbsolutePoint location="134,1163" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trainTraNotice.do,queryTrainSendNotice,/page/sale/trainSendNotice.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1559,1617" />
+      <AbsolutePoint location="1559,1667" />
+      <AbsolutePoint location="1763,1667" />
+      <AbsolutePoint location="1763,1717" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/woodSaleSelect.do,woodSaleSelectList,/page/sale/woodSaleSelectList.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="573,1617" />
+      <AbsolutePoint location="573,1667" />
+      <AbsolutePoint location="813,1667" />
+      <AbsolutePoint location="813,1717" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/deleteTruckNotice.do,selectNoticeMainOne,/page/sale/truckNoticeManageData.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1524,1894" />
+      <AbsolutePoint location="1524,1944" />
+      <AbsolutePoint location="1442,1944" />
+      <AbsolutePoint location="1442,1994" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/goodsNotesPress.do,succ,/page/sale/goodsNotesPress.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2133,1894" />
+      <AbsolutePoint location="2133,1944" />
+      <AbsolutePoint location="2057,1944" />
+      <AbsolutePoint location="2057,1994" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/TrainplanApplyAction.do,succmain,/page/sale/trainpalnapplymain.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="857,786" />
+      <AbsolutePoint location="857,851" />
+      <AbsolutePoint location="1115,851" />
+      <AbsolutePoint location="1115,886" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trainPlanApplySelect.do,succlist,/page/sale/trainpalnapplylistSelect.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1524,84" />
+      <AbsolutePoint location="1524,114" />
+      <AbsolutePoint location="758,114" />
+      <AbsolutePoint location="758,204" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trainPlanApplyInsertAction.do,selectOrderFirst,/page/sale/trainplanapplyOrderSelect.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="870,509" />
+      <AbsolutePoint location="870,609" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trainPlanApplySelect.do,succonedata,/page/sale/showTrainPlanOneData.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1703,84" />
+      <AbsolutePoint location="1703,174" />
+      <AbsolutePoint location="1850,174" />
+      <AbsolutePoint location="1850,204" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trainNeedMoney.do,update,/page/sale/updateTrainNeedMoney.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2038,1063" />
+      <AbsolutePoint location="2038,1128" />
+      <AbsolutePoint location="2164,1128" />
+      <AbsolutePoint location="2164,1163" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/page/sale/brachNoticeSelect.jsp,null,/brachNoticeSelect.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="288,48" />
+      <AbsolutePoint location="288,148" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/TrainPriaceAction.do,traininfo,/page/sale/trainpriceupdate.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="985,2171" />
+      <AbsolutePoint location="985,2271" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/remainderSaleProc.do,selectRemainderProc,/page/sale/remainderProcInsert.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="582,2448" />
+      <AbsolutePoint location="582,2548" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trainNeedMoney.do,selectMain,/page/sale/addTrainNeedMoney.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1948,1063" />
+      <AbsolutePoint location="1948,1128" />
+      <AbsolutePoint location="1823,1128" />
+      <AbsolutePoint location="1823,1163" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/deleteWoodBranchNotice.do,selectFirst,/page/sale/woodBranchNoticeManage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2337,1617" />
+      <AbsolutePoint location="2337,1667" />
+      <AbsolutePoint location="2435,1667" />
+      <AbsolutePoint location="2435,1717" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/priceListOfWoodSaleByMonth.do,succ,/page/sale/priceListOfWoodSaleByMonth.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2507,2171" />
+      <AbsolutePoint location="2507,2221" />
+      <AbsolutePoint location="2525,2221" />
+      <AbsolutePoint location="2525,2271" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/truckNotice.do,selectUpdateFirst,/page/sale/truckNoticeUpdateFirst.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="633,1063" />
+      <AbsolutePoint location="633,1128" />
+      <AbsolutePoint location="498,1128" />
+      <AbsolutePoint location="498,1163" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trainTraNotice.do,updateMain,/page/sale/updateTrainTraNotice.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1320,1617" />
+      <AbsolutePoint location="1320,1667" />
+      <AbsolutePoint location="1102,1667" />
+      <AbsolutePoint location="1102,1717" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trainNotice.do,selectNoticeMainOne,/page/sale/trainNoticeUpdateMain.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1984,1340" />
+      <AbsolutePoint location="1984,1405" />
+      <AbsolutePoint location="2119,1405" />
+      <AbsolutePoint location="2119,1440" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/TrainplanApplyAction.do,sessicireport,/page/sale/selecttraininfo.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="786,786" />
+      <AbsolutePoint location="786,886" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/page/sale/trainPayoutInformPress.jsp,null,/trainPayoutInformPress.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="196,1440" />
+      <AbsolutePoint location="196,1405" />
+      <AbsolutePoint location="379,1405" />
+      <AbsolutePoint location="379,1340" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/TrainplanApplyAction.do,succselectmain,/page/sale/trainplanapply.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="929,786" />
+      <AbsolutePoint location="929,821" />
+      <AbsolutePoint location="1441,821" />
+      <AbsolutePoint location="1441,886" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trainPlanApplySelect.do,succselectmain,/page/sale/trainplanapplySelect.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1822,84" />
+      <AbsolutePoint location="1822,114" />
+      <AbsolutePoint location="2574,114" />
+      <AbsolutePoint location="2574,204" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/truckNotice.do,selectTruckNotice,/page/sale/truckNoticeInsert.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="812,1063" />
+      <AbsolutePoint location="812,1098" />
+      <AbsolutePoint location="1202,1098" />
+      <AbsolutePoint location="1202,1163" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trainNeedMoney.do,queryMain,/page/sale/queryTrainNeedMoney.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1859,1063" />
+      <AbsolutePoint location="1859,1098" />
+      <AbsolutePoint location="1485,1098" />
+      <AbsolutePoint location="1485,1163" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trainPayoutInformPress.do,succ,/page/sale/trainPayoutInformPress.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="307,1340" />
+      <AbsolutePoint location="307,1375" />
+      <AbsolutePoint location="65,1375" />
+      <AbsolutePoint location="65,1440" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trainPlanApplyInsertAction.do,insertSuccess,/page/sale/trainplanapplyInsert.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1013,509" />
+      <AbsolutePoint location="1013,544" />
+      <AbsolutePoint location="1585,544" />
+      <AbsolutePoint location="1585,609" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/deleteRemainderNotice.do,selectFirst,/page/sale/remainderNoticeManage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="413,1894" />
+      <AbsolutePoint location="413,1944" />
+      <AbsolutePoint location="508,1944" />
+      <AbsolutePoint location="508,1994" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trainTraNotice.do,queryMain,/page/sale/queryTrainNotice.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1440,1617" />
+      <AbsolutePoint location="1440,1717" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trainPlanApplyInsertAction.do,trainOrderNumList,/page/sale/showTrainOrderNum.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="798,509" />
+      <AbsolutePoint location="798,574" />
+      <AbsolutePoint location="514,574" />
+      <AbsolutePoint location="514,609" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/branchInvoice.do,succ,/page/sale/branchInvoice.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2104,2171" />
+      <AbsolutePoint location="2104,2221" />
+      <AbsolutePoint location="2142,2221" />
+      <AbsolutePoint location="2142,2271" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/allSalesJournalSheet.do,selectFirst,/page/sale/allSalesJournalSheet.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="89,2448" />
+      <AbsolutePoint location="89,2498" />
+      <AbsolutePoint location="116,2498" />
+      <AbsolutePoint location="116,2548" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/deleteTrainNotice.do,selectNoticeMainOne,/page/sale/trainNoticeManageData.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="891,1894" />
+      <AbsolutePoint location="891,1944" />
+      <AbsolutePoint location="809,1944" />
+      <AbsolutePoint location="809,1994" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trainPlanApplySelect.do,succmain,/page/sale/trainpalnapplymainSelect.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1763,84" />
+      <AbsolutePoint location="1763,144" />
+      <AbsolutePoint location="2212,144" />
+      <AbsolutePoint location="2212,204" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trainPayoutInformPress.do,succOrder,/page/sale/trainOrderNumSelect.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="522,1340" />
+      <AbsolutePoint location="522,1405" />
+      <AbsolutePoint location="762,1405" />
+      <AbsolutePoint location="762,1440" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/woodBranchNotice.do,selectWoodBranch,/page/sale/woodBranchNotice.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="985,2448" />
+      <AbsolutePoint location="985,2548" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trainPlanApplyInsertAction.do,trainOrderNumListAll,/page/sale/showTrainOrderNumAll.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="941,509" />
+      <AbsolutePoint location="941,574" />
+      <AbsolutePoint location="1235,574" />
+      <AbsolutePoint location="1235,609" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/brachNoticeSelect.do,first,/page/sale/branchNoticeSelect.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="198,232" />
+      <AbsolutePoint location="198,282" />
+      <AbsolutePoint location="119,282" />
+      <AbsolutePoint location="119,332" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trainNotice.do,selectTrainNotice,/page/sale/trainNoticeInsert.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1805,1340" />
+      <AbsolutePoint location="1805,1375" />
+      <AbsolutePoint location="1413,1375" />
+      <AbsolutePoint location="1413,1440" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trainNeedMoney.do,showList,/page/sale/showOneTrainNeedMoney.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2127,1063" />
+      <AbsolutePoint location="2127,1098" />
+      <AbsolutePoint location="2517,1098" />
+      <AbsolutePoint location="2517,1163" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trainPayoutInformPress.do,succOrderShow,/page/sale/trainOrderNumSelectShow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="594,1340" />
+      <AbsolutePoint location="594,1375" />
+      <AbsolutePoint location="1118,1375" />
+      <AbsolutePoint location="1118,1440" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trainPlanApplySelect.do,succshow,/page/sale/trainpalnapplyshowSelect.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1584,84" />
+      <AbsolutePoint location="1584,144" />
+      <AbsolutePoint location="1132,144" />
+      <AbsolutePoint location="1132,204" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trainPlanApplyInsertAction.do,selectOrderFirstAll,/page/sale/trainplanapplyOrderSelectAll.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="726,509" />
+      <AbsolutePoint location="726,544" />
+      <AbsolutePoint location="149,544" />
+      <AbsolutePoint location="149,609" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/page/sale/trainNotifyCarNo.jsp,null,/trainNotifyCarNo.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="235,2271" />
+      <AbsolutePoint location="235,2221" />
+      <AbsolutePoint location="268,2221" />
+      <AbsolutePoint location="268,2171" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/TransferorderTrainPriaceAction.do,success,/invoiceOrderNum.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1791,2171" />
+      <AbsolutePoint location="1791,2271" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/page/sale/priceListOfWoodSaleByMonth.jsp,null,/priceListOfWoodSaleByMonth.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2668,2271" />
+      <AbsolutePoint location="2668,2221" />
+      <AbsolutePoint location="2686,2221" />
+      <AbsolutePoint location="2686,2171" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trainPayoutInformPress.do,jump,/page/sale/allPress.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="451,1340" />
+      <AbsolutePoint location="451,1440" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trainNotifyCarNo.do,succ,/page/sale/trainNotifyCarNo.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="89,2171" />
+      <AbsolutePoint location="89,2221" />
+      <AbsolutePoint location="122,2221" />
+      <AbsolutePoint location="122,2271" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trainNotice.do,stationTree,/page/sale/stationTree.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2073,1340" />
+      <AbsolutePoint location="2073,1375" />
+      <AbsolutePoint location="2445,1375" />
+      <AbsolutePoint location="2445,1440" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

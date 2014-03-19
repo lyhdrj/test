@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="baseinfo" extends="default,json-default" namespace="/page/baseinfo">
+		<!-- 基本信息管理 -->
+		<action name="baseInfoManage*" class="baseInfoManage">
+			<result name="querysuccess">/page/baseinfo/baseInfoList.jsp</result>
+			<result name="deletesuccess">/page/baseinfo/baseInfoList.jsp</result>
+			<result name="addsuccess">/page/baseinfo/baseInfoAdd.jsp</result>
+			<result name="queryforupdate">/page/baseinfo/baseInfoModify.jsp</result>
+			<result name="updatesuccess" type="redirectAction">
+				<param name="actionName">baseInfoManage!queryBaseInfo</param>  
+				<param name="pageBean.totalCount">0</param>
+				<param name="pageBean.currentPage">1</param>
+			</result>
+		</action>
+		<action name="baseInfo*" class="baseInfoAction">
+		<result type="json" name="jsuccess">
+				<param name="root">jsonResult</param>
+			</result>
+			<result name="init">/page/baseinfo/baseinfo.jsp</result>
+			<result name="init2">/page/baseinfo/baseinfo2.jsp</result>
+		</action>
+    </package>
+</struts>
