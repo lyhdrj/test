@@ -8,7 +8,7 @@ com.test.Executable eee=new com.test.Executable(){
 				b=a++;
 				System.out.println("a="+a);
 				print(b);
-				print("------开始了-------fff");
+				print("------开始了-------");
 				user=new com.test.User();
 				user.name="李酷爱";
 				user.pwd="123456";
